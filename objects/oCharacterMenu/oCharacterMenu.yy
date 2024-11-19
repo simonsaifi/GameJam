@@ -6,8 +6,8 @@
   "name":"oCharacterMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objets",
-    "path":"folders/Objets.yy",
+    "name":"Obj_Menu",
+    "path":"folders/Objets/Obj_Menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,

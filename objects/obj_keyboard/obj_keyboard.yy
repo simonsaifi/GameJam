@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_title",
-  "eventList":[],
+  "%Name":"obj_keyboard",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":27,"eventType":5,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_title",
+  "name":"obj_keyboard",
   "overriddenProperties":[],
   "parent":{
     "name":"Obj_Menu",
@@ -28,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprite_title",
-    "path":"sprites/sprite_title/sprite_title.yy",
+    "name":"sprite_keyboard_template",
+    "path":"sprites/sprite_keyboard_template/sprite_keyboard_template.yy",
   },
   "spriteMaskId":null,
   "visible":true,
