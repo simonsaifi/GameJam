@@ -4,6 +4,12 @@ phy_position_x = start_x; // Keep the player at the initial x position
 // Ground Detection
 var on_ground = place_meeting(x, y + 2, obj_ground); // Check slightly below the player
 
+
+// Decrease the cooldown timer
+if (jump_cooldown > 0) {
+    jump_cooldown -= 1; // Reduce cooldown each frame
+}
+
 // Gravity Logic
 if (!on_ground) {
     // If not on the ground, apply gravity
@@ -12,10 +18,11 @@ if (!on_ground) {
 } else {
     // If on the ground, reset jumping state
     if (is_jumping && phy_speed_y >= 0) {
-        is_jumping = false;          // Reset jumping flag
-        sprite_index = spr_ninjaRun; // Switch back to running animation
-        image_index = 0;             // Restart animation
-        image_speed = 1.0;           // Set animation speed for running
+        is_jumping = false;         // Reset jumping flag
+		sprite_index = spr_ninjaRun; // Switch back to running animation
+		image_index = 0;             // Restart animation
+		image_speed = 1.0;           // Set animation speed for running
+		
     }
 
     phy_speed_y = 0; // Stop vertical movement when on the ground
@@ -32,7 +39,7 @@ if (!keyboard_check(vk_space)) {
 }
 
 // Jump Logic with Key Handling
-if (keyboard_check(vk_space) && on_ground && !key_held) {
+if (keyboard_check(vk_space) && on_ground && !key_held && jump_cooldown == 0) {
     // Mark the key as held to prevent continuous jumps
     key_held = true;
 
@@ -54,6 +61,10 @@ if (keyboard_check(vk_space) && on_ground && !key_held) {
     image_speed = 1.0;            // Set jump animation speed
     phy_speed_y = jump_speed;     // Apply upward velocity
     is_jumping = true;            // Mark player as jumping
+	
+	audio_play_sound(Sound_Jump, 1, false);
+	
+	jump_cooldown = 60;
 }
 
 // Apply Vertical Movement
@@ -70,6 +81,7 @@ if (is_jumping) {
     }
 }
 
+
 // Run Dust Effect
 if (on_ground && sprite_index == spr_ninjaRun) {
     // Calculate dust effect position
@@ -78,4 +90,30 @@ if (on_ground && sprite_index == spr_ninjaRun) {
 
     // Spawn the dust effect
     instance_create_layer(dust_x, dust_y, "FX", obj_runDust);
+}
+
+// Decrease the cooldown timer
+if (throw_cooldown > 0) {
+    throw_cooldown -= 1; // Reduce cooldown each frame
+}
+
+// Shuriken Throwing Logic with Cooldown
+if (keyboard_check_pressed(ord("Z")) && throw_cooldown == 0) {
+    // Spawn a shuriken in front of the player
+    var shuriken_x = x + 100; // Adjust to spawn in front of the player
+    var shuriken_y = y + 60; // Align with the player’s vertical position
+    var shuriken = instance_create_layer(shuriken_x, shuriken_y, "FX", obj_shuriken);
+
+    // Set shuriken direction
+    if (image_xscale == 1) {
+        shuriken.direction = 0; // Throw to the right
+    } else {
+        shuriken.direction = 180; // Throw to the left
+    }
+	
+	// Play the shuriken sound
+    audio_play_sound(Sound_Shuriken, 1, false);
+
+    // Start cooldown
+    throw_cooldown = 45;
 }
