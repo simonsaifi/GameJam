@@ -49,7 +49,6 @@
     {"id":{"name":"obj_title","path":"objects/obj_title/obj_title.yy",},},
     {"id":{"name":"RoomGame","path":"rooms/RoomGame/RoomGame.yy",},},
     {"id":{"name":"RoomHelp","path":"rooms/RoomHelp/RoomHelp.yy",},},
-    {"id":{"name":"RoomMenu","path":"rooms/RoomMenu/RoomMenu.yy",},},
     {"id":{"name":"Sound_Game","path":"sounds/Sound_Game/Sound_Game.yy",},},
     {"id":{"name":"Sound_Menu","path":"sounds/Sound_Menu/Sound_Menu.yy",},},
     {"id":{"name":"spr_jumpEffect","path":"sprites/spr_jumpEffect/spr_jumpEffect.yy",},},
@@ -67,7 +66,6 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"RoomMenu","path":"rooms/RoomMenu/RoomMenu.yy",},},
     {"roomId":{"name":"RoomGame","path":"rooms/RoomGame/RoomGame.yy",},},
     {"roomId":{"name":"RoomHelp","path":"rooms/RoomHelp/RoomHelp.yy",},},
   ],
