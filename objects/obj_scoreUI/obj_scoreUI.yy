@@ -8,8 +8,8 @@
   "name":"obj_scoreUI",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objets",
-    "path":"folders/Objets.yy",
+    "name":"Obj_HUD",
+    "path":"folders/Objets/Obj_HUD.yy",
   },
   "parentObjectId":null,
   "persistent":false,

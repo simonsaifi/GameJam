@@ -6,8 +6,8 @@
   "name":"obj_ground",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objets",
-    "path":"folders/Objets.yy",
+    "name":"Obj-Set",
+    "path":"folders/Objets/Obj-Set.yy",
   },
   "parentObjectId":null,
   "persistent":false,

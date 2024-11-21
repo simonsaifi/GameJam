@@ -8,8 +8,8 @@
   "name":"obj_Sound_Menu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objets",
-    "path":"folders/Objets.yy",
+    "name":"Obj_Sound",
+    "path":"folders/Objets/Obj_Sound.yy",
   },
   "parentObjectId":null,
   "persistent":false,

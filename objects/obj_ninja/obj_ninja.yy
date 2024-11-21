@@ -10,8 +10,8 @@
   "name":"obj_ninja",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objets",
-    "path":"folders/Objets.yy",
+    "name":"Obj_Player",
+    "path":"folders/Objets/Obj_Player.yy",
   },
   "parentObjectId":null,
   "persistent":false,

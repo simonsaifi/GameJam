@@ -9,8 +9,8 @@
   "name":"obj_Sound_Game",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objets",
-    "path":"folders/Objets.yy",
+    "name":"Obj_Sound",
+    "path":"folders/Objets/Obj_Sound.yy",
   },
   "parentObjectId":null,
   "persistent":false,

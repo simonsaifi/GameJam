@@ -6,8 +6,8 @@
   "name":"obj_attackEffect",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objets",
-    "path":"folders/Objets.yy",
+    "name":"Weapons",
+    "path":"folders/Objets/Obj_Player/Weapons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

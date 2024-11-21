@@ -30,8 +30,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Effects",
+    "path":"folders/Sprites/Player/Effects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

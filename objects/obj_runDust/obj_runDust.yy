@@ -9,8 +9,8 @@
   "name":"obj_runDust",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objets",
-    "path":"folders/Objets.yy",
+    "name":"Effects",
+    "path":"folders/Objets/Obj_Player/Effects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
