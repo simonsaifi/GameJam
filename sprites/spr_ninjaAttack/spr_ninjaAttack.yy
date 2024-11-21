@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"spr_ninjaAttack",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":165,
   "bbox_left":10,
   "bbox_right":164,

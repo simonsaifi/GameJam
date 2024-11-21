@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_giant_enemy_idle_1pv",
-  "bboxMode":0,
-  "bbox_bottom":215,
+  "bboxMode":2,
+  "bbox_bottom":131,
   "bbox_left":0,
-  "bbox_right":131,
+  "bbox_right":126,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,

@@ -197,7 +197,7 @@ if (throw_cooldown > 0) {
 if (keyboard_check_pressed(ord("Z")) && throw_cooldown == 0) {
     var shuriken_x = x + 100; // Adjust to spawn in front of the player
     var shuriken_y = y + 60; // Align with the player’s vertical position
-    var shuriken = instance_create_layer(shuriken_x, shuriken_y, "FX", obj_shuriken);
+    var shuriken = instance_create_layer(shuriken_x, shuriken_y, "Instances", obj_shuriken);
 
     // Set shuriken direction
     if (image_xscale == 1) {

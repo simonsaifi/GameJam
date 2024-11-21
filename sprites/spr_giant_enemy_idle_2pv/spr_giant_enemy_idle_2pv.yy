@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
   "%Name":"spr_giant_enemy_idle_2pv",
-  "bboxMode":0,
-  "bbox_bottom":215,
+  "bboxMode":2,
+  "bbox_bottom":125,
   "bbox_left":0,
   "bbox_right":149,
   "bbox_top":0,

@@ -20,8 +20,6 @@
     {"$GMSpriteFrame":"","%Name":"987c6f45-d886-4b04-958a-025341d58244","name":"987c6f45-d886-4b04-958a-025341d58244","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"e7fca54f-b09e-4d6a-a6ac-5504a781e532","name":"e7fca54f-b09e-4d6a-a6ac-5504a781e532","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"37e7ff96-80a2-4fb8-a1be-b4aebf3fb9f8","name":"37e7ff96-80a2-4fb8-a1be-b4aebf3fb9f8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e88a5eaa-0bb7-4dd8-8e68-bc11cb9aa9d3","name":"e88a5eaa-0bb7-4dd8-8e68-bc11cb9aa9d3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"4ec51c82-e2bb-4302-8b2e-81b2048beaae","name":"4ec51c82-e2bb-4302-8b2e-81b2048beaae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -58,7 +56,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":10.0,
+    "length":8.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -101,12 +99,6 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"37e7ff96-80a2-4fb8-a1be-b4aebf3fb9f8","path":"sprites/spr_archery_enemy_attack/spr_archery_enemy_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"37c93351-0788-4cc2-9467-967c8835a63a","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e88a5eaa-0bb7-4dd8-8e68-bc11cb9aa9d3","path":"sprites/spr_archery_enemy_attack/spr_archery_enemy_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"713ec04a-b218-45f8-8269-98b67beb5293","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4ec51c82-e2bb-4302-8b2e-81b2048beaae","path":"sprites/spr_archery_enemy_attack/spr_archery_enemy_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b9643b34-6525-4493-ab74-14e7369bcfc0","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

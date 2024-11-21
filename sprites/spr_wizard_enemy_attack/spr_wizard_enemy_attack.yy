@@ -1,9 +1,9 @@
 {
   "$GMSprite":"",
   "%Name":"spr_wizard_enemy_attack",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":274,
-  "bbox_left":0,
+  "bbox_left":193,
   "bbox_right":305,
   "bbox_top":0,
   "collisionKind":1,
@@ -20,10 +20,6 @@
     {"$GMSpriteFrame":"","%Name":"a1dc9c5e-cef6-47fa-85a1-59c8785bd3c2","name":"a1dc9c5e-cef6-47fa-85a1-59c8785bd3c2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"ca656657-1356-48bc-b1c1-6bdd9d636408","name":"ca656657-1356-48bc-b1c1-6bdd9d636408","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"32743a29-8da7-4a41-a80b-170936f2cf5b","name":"32743a29-8da7-4a41-a80b-170936f2cf5b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"ae31648c-fc58-4190-bbd8-cb771a278c54","name":"ae31648c-fc58-4190-bbd8-cb771a278c54","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"4c115ad6-2f70-4d9a-bdfb-703c620038dd","name":"4c115ad6-2f70-4d9a-bdfb-703c620038dd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"828a4cd1-c014-4f54-83bc-2e62313379af","name":"828a4cd1-c014-4f54-83bc-2e62313379af","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"4742f2be-5053-481b-bfc2-3593f11879d7","name":"4742f2be-5053-481b-bfc2-3593f11879d7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -60,7 +56,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":12.0,
+    "length":8.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -102,19 +98,7 @@
               },"Disabled":false,"id":"c4cefa66-52c0-4acd-ba3e-c8a02a56607e","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"32743a29-8da7-4a41-a80b-170936f2cf5b","path":"sprites/spr_wizard_enemy_attack/spr_wizard_enemy_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"41226cf7-cc1c-4c01-a50d-580e8c3f8e0b","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ae31648c-fc58-4190-bbd8-cb771a278c54","path":"sprites/spr_wizard_enemy_attack/spr_wizard_enemy_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"fa173776-3aee-4fa0-a7dc-c4817189e979","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4c115ad6-2f70-4d9a-bdfb-703c620038dd","path":"sprites/spr_wizard_enemy_attack/spr_wizard_enemy_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"5d6a48b1-6721-4ecb-ac82-979be1e37c8f","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"828a4cd1-c014-4f54-83bc-2e62313379af","path":"sprites/spr_wizard_enemy_attack/spr_wizard_enemy_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"d300e4a7-6e39-4c20-9287-134f9bb3546d","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4742f2be-5053-481b-bfc2-3593f11879d7","path":"sprites/spr_wizard_enemy_attack/spr_wizard_enemy_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"eee4d83c-68ac-4d5d-978e-8d694ac90684","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"6c57c71d-5808-40eb-a4ea-20b8c1170474","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

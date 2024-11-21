@@ -1,9 +1,9 @@
 {
   "$GMSprite":"",
   "%Name":"spr_giant_enemy_attack_1pv",
-  "bboxMode":0,
-  "bbox_bottom":209,
-  "bbox_left":0,
+  "bboxMode":2,
+  "bbox_bottom":118,
+  "bbox_left":58,
   "bbox_right":191,
   "bbox_top":0,
   "collisionKind":1,

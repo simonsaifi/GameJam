@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_giant_enemy_hit",
-  "bboxMode":0,
-  "bbox_bottom":209,
+  "bboxMode":2,
+  "bbox_bottom":129,
   "bbox_left":0,
-  "bbox_right":155,
+  "bbox_right":137,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
