@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"Sound_Attack1",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.84,
+  "name":"Sound_Attack1",
+  "parent":{
+    "name":"Sons",
+    "path":"folders/Sons.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"Sound_Attack1.mp3",
+  "type":0,
+  "volume":1.0,
+}
