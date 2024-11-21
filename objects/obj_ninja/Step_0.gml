@@ -315,4 +315,4 @@ if (!on_ground && phy_speed_y < 0 && is_jumping) {
 }
 
 // Reset rotation every frame
-image_angle = 0; // Prevent unwanted rotation
+phy_rotation = 0 // Prevent unwanted rotation
