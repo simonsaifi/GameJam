@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_shoot",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_shoot",
+  "parent":{
+    "name":"weapons",
+    "path":"folders/Scripts/enemy/weapons.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
