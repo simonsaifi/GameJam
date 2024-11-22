@@ -8,23 +8,21 @@ if (timer >= next_spawn_time) {
     // Réinitialiser le timer
     timer = 0;
 
-    // Choisir aléatoirement un ennemi à faire apparaître
-    var enemy_type = irandom(3);  // Génère un nombre entre 0 et 3 pour choisir un ennemi (4 ennemis possibles)
+    // Tirer un nombre aléatoire entre 0 et 100
+    var spawn_chance = irandom(100); // Cela donne un nombre entre 0 et 100
 
-    // Spawner un ennemi selon le nombre aléatoire généré
-    switch (enemy_type) {
-        case 0:
-            instance_create_layer(room_width + sprite_width, 568, "Instances", obj_basic_enemy);
-            break;
-        case 1:
-            instance_create_layer(room_width + sprite_width, 570, "Instances", obj_archery_enemy);
-            break;
-        case 2:
-            instance_create_layer(room_width + sprite_width, 505, "Instances", obj_giant_enemy);
-            break;
-        case 3:
-            instance_create_layer(room_width + sprite_width, 510, "Instances", obj_wizard_enemy);
-            break;
+    // Choisir l'ennemi à faire apparaître en fonction de la probabilité
+    if (spawn_chance < 50) {  // 50% pour obj_basic_enemy
+        instance_create_layer(room_width + sprite_width, 568, "Instances", obj_basic_enemy);
+    }
+    else if (spawn_chance < 75) {  // 25% pour obj_archery_enemy (50 + 25 = 75)
+        instance_create_layer(room_width + sprite_width, 570, "Instances", obj_archery_enemy);
+    }
+    else if (spawn_chance < 90) {  // 15% pour obj_giant_enemy (75 + 15 = 90)
+        instance_create_layer(room_width + sprite_width, 505, "Instances", obj_giant_enemy);
+    }
+    else {  // 10% pour obj_wizard_enemy (90 + 10 = 100)
+        instance_create_layer(room_width + sprite_width, 510, "Instances", obj_wizard_enemy);
     }
 
     // Choisir un nouvel intervalle aléatoire pour le prochain spawn (entre 4 et 10 secondes)
