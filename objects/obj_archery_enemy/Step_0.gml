@@ -26,6 +26,7 @@ if (state == "idle" && state != "die") {
 // Gestion des états
 switch (state) {
     case "idle": // Cas Idle
+		x -= 4; // Déplacement
         sprite_index = sprite_idle; // Définir le sprite de l'ennemi en idle
         break;
 
@@ -94,8 +95,6 @@ if (animation_done && state != "idle" && state != "die") { // Si l'animation est
     image_index = 0; // Réinitialiser l'index de l'image pour commencer le retour à idle
     state = "idle"; // Définir l'état en idle
 }
-
- x -= 4; // Déplacement
 
 // Vérifier si l'objet sort du cadre à gauche
 if (x < -150) {
