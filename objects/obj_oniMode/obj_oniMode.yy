@@ -1,17 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_archery_enemy",
+  "%Name":"obj_oniMode",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_archery_enemy",
+  "name":"obj_oniMode",
   "overriddenProperties":[],
   "parent":{
-    "name":"Obj_Ennemis",
-    "path":"folders/Objets/Obj_Ennemis.yy",
+    "name":"Obj_HUD",
+    "path":"folders/Objets/Obj_HUD.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_oniMode",
+    "path":"sprites/spr_oniMode/spr_oniMode.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

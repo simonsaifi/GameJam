@@ -9,28 +9,47 @@ if (jump_cooldown > 0) {
     jump_cooldown -= 1; // Reduce cooldown each frame
 }
 
-// Handle Oni Transformation
-if (keyboard_check_pressed(ord("T"))) { // Press 'T' to toggle transformation
-    is_transformed = !is_transformed; // Toggle transformation state
-    show_debug_message("Transformation toggled: " + string(is_transformed));
-	
-	// Spawn smoke effect under the character
-    var smoke_x = x + 60; // Horizontally aligned with the character
-    var smoke_y = bbox_bottom - 110; // Align with the bottom of the character
-    instance_create_layer(smoke_x, smoke_y, "UI", obj_Smoke); // Spawn smoke effect
-	audio_play_sound(Sound_Transformation, 1, false);
-	
-	// Music Logic
-    if (is_transformed) {
+// Oni Bar Filling Logic
+if (!is_transformed) {
+    if (on_ground || phy_speed_x != 0) {
+        oni_bar += 0.5; // Increase the Oni bar while running or moving
+    }
+    oni_bar = clamp(oni_bar, 0, oni_bar_max); // Ensure it doesn't exceed the max value
+
+    // Automatically activate Oni mode when the bar is full
+    if (oni_bar >= oni_bar_max) {
+        is_transformed = true;          // Activate Oni mode
+        oni_mode_timer = oni_mode_duration; // Set the timer for Oni mode duration
+
+        // Play transformation effects
+        var smoke_x = x + 60; // Horizontally aligned with the character
+        var smoke_y = bbox_bottom - 110; // Align with the bottom of the character
+        instance_create_layer(smoke_x, smoke_y, "UI", obj_Smoke);
+        audio_play_sound(Sound_Transformation, 1, false);
+
         // Play Oni music
         audio_stop_all(); // Stop any currently playing music
         audio_play_sound(Sound_Oni, 1, true); // Play Oni music in a loop
-    } else {
-        // Return to normal music
-        audio_stop_all(); // Stop Oni music
-        audio_play_sound(Sound_Game, 1, true); // Play normal music in a loop
+
+        show_debug_message("Oni mode activated automatically!");
     }
 }
+
+// Oni Mode Timer Countdown
+if (is_transformed) {
+    oni_mode_timer -= 1; // Decrease timer each frame
+    if (oni_mode_timer <= 0) {
+        is_transformed = false;  // Deactivate Oni mode
+        oni_bar = 0;             // Reset the Oni bar
+
+        // Play normal music
+        audio_stop_all();
+        audio_play_sound(Sound_Game, 1, true);
+
+        show_debug_message("Oni mode ended.");
+    }
+}
+
 
 
 // Running Logic

@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_archery_enemy",
+  "%Name":"obj_groundTuto",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_archery_enemy",
+  "name":"obj_groundTuto",
   "overriddenProperties":[],
   "parent":{
-    "name":"Obj_Ennemis",
-    "path":"folders/Objets/Obj_Ennemis.yy",
+    "name":"Obj-Set",
+    "path":"folders/Objets/Obj-Set.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -21,7 +20,7 @@
   "physicsGroup":1,
   "physicsKinematic":false,
   "physicsLinearDamping":0.1,
-  "physicsObject":false,
+  "physicsObject":true,
   "physicsRestitution":0.1,
   "physicsSensor":false,
   "physicsShape":1,
@@ -31,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sprite_block",
+    "path":"sprites/sprite_block/sprite_block.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
