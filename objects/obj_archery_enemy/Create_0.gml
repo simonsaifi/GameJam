@@ -13,5 +13,10 @@ animation_done = false; //Initialisation de l'animation sur pas terminée
 
 //Flèches
 // Initialisation des variables de tir
-shoot_interval = 50; // Intervalle de tir en frames (par exemple, 60 frames = 1 seconde)
+shoot_interval = 150; // Intervalle de tir en frames (par exemple, 60 frames = 1 seconde)
 shoot_timer = 0; // Timer pour le tir
+attack_distance = 800; //Distance de détéction d'ennemi
+
+
+isAttacking = false; 
+isDying = false;

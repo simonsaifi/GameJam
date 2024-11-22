@@ -146,9 +146,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"RoomGame","path":"rooms/RoomGame/RoomGame.yy",},},
-    {"roomId":{"name":"RoomTestEnemy","path":"rooms/RoomTestEnemy/RoomTestEnemy.yy",},},
     {"roomId":{"name":"RoomMenu","path":"rooms/RoomMenu/RoomMenu.yy",},},
+    {"roomId":{"name":"RoomTestEnemy","path":"rooms/RoomTestEnemy/RoomTestEnemy.yy",},},
+    {"roomId":{"name":"RoomGame","path":"rooms/RoomGame/RoomGame.yy",},},
     {"roomId":{"name":"RoomCredits","path":"rooms/RoomCredits/RoomCredits.yy",},},
     {"roomId":{"name":"RoomHelp","path":"rooms/RoomHelp/RoomHelp.yy",},},
   ],
