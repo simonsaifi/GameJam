@@ -12,5 +12,9 @@ sprite_die = spr_wizard_enemy_die; // Sprite pour la mort
 animation_done = false;
 
 // Initialisation des variables de tir
-shoot_interval = 120; // Intervalle de tir en frames (120 frames = 2 secondes)
+shoot_interval = 160; // Intervalle de tir en frames (120 frames = 2 secondes)
 shoot_timer = 0; // Timer pour le tir
+attack_distance = 800;
+
+isAttacking = false; 
+isDying = false;

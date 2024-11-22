@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_archery_enemy_idle",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":168,
-  "bbox_left":0,
-  "bbox_right":124,
+  "bbox_left":51,
+  "bbox_right":108,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,

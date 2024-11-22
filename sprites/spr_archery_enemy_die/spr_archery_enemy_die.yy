@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_archery_enemy_die",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":142,
-  "bbox_left":0,
-  "bbox_right":171,
+  "bbox_left":62,
+  "bbox_right":143,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,

@@ -70,7 +70,7 @@ if (pv == 2) {
 
 // Transition d'état en fonction des touches pressées à 1PV
 if (pv == 1) {
-    if (place_meeting(x, y, obj_shuriken)) { // Si le géant se prend un shuriken il joue l'anim hit et perd 1pv
+    if (place_meeting(x, y, obj_shuriken)&& state != "die") { // Si le géant se prend un shuriken il joue l'anim hit
         state = "hit";
         animation_done = false;
         image_index = 0;

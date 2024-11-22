@@ -32,7 +32,7 @@ switch (state) { //Initialisation état state
 }
 
 // Transition d'état en fonction des touches pressées
-if (place_meeting(x, y, obj_shuriken)) { // Si l'ennemi se prend un shuriken
+if (place_meeting(x, y, obj_shuriken) && state != "die") { // Si l'ennemi se prend un shuriken
     animation_done = false; // L'animation est comptée comme non terminée
     image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation hit
     state = "hit"; // L'état se met en hit/touché
@@ -41,12 +41,12 @@ if (place_meeting(x, y, obj_shuriken)) { // Si l'ennemi se prend un shuriken
     if (shuriken != noone) {
         instance_destroy(shuriken); // Détruire l'instance du shuriken
     }
-} else if (place_meeting(x, y, obj_ninja) && !isAttacking) { // Si le joueur est touché par l'ennemi
+} else if (place_meeting(x, y, obj_ninja) && !isAttacking && state != "die") { // Si le joueur est touché par l'ennemi
     animation_done = false; // Animation définie sur pas terminée
     image_index = 0; // Réinitialiser l'index de l'image
     state = "attack"; // L'état passe à attaque
     isAttacking = true;
-} else if (place_meeting(x, y, obj_attackEffect) && state != "die") { // Si l'ennemi se fait toucher
+} else if (place_meeting(x, y, obj_attackEffect) && state != "hit" && state != "die") { // Si l'ennemi se fait toucher
     animation_done = false; // Animation définie sur pas terminée
     image_index = 0; // Réinitialiser l'index de l'image
     state = "hit"; // L'état passe à hit
