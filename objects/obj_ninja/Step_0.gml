@@ -214,7 +214,7 @@ if (keyboard_check_pressed(ord("Z")) && throw_cooldown == 0) {
 	}
 }
 
-// Dans l'événement Step du joueur
+// Attaque à l'épée quand on presse E
 if (keyboard_check_pressed(ord("E")) && !is_attacking && !is_sliding) {
     is_attacking = true; // Start attack state
     attack_timer = attack_duration; // Set timer to the length of the animation
@@ -317,10 +317,5 @@ if (keyboard_check_pressed(vk_space) && jump_timer <= 0) {
     }
 }
 
-// Limit upward force to prevent spinning or flipping
-if (!on_ground && phy_speed_y < 0 && is_jumping) {
-    phy_speed_y = max(phy_speed_y, jump_speed);
-}
-
-// Reset rotation every frame
+// Lock Ninja Rotation
 phy_rotation = 0 // Prevent unwanted rotation

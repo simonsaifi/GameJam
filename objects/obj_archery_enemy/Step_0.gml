@@ -1,24 +1,26 @@
 // Vérifie si le ninja est en range
-if (state == "idle" && state != "die"){
-	var ninja = instance_nearest(x, y, obj_ninja); // Trouver le ninja le plus proche
-	if (ninja != noone) {
-	    var distance_to_ninja = point_distance(x, y, ninja.x, ninja.y);
-	    if (distance_to_ninja <= attack_distance && shoot_timer <= 0) {
-	        // Passer à l'état d'attaque
-	        state = "attack";
-	        isAttacking = true;
+if (state == "idle" && state != "die") {
+    var ninja = instance_nearest(x, y, obj_ninja); // Trouver le ninja le plus proche
+    if (ninja != noone) {
+        var distance_to_ninja = point_distance(x, y, ninja.x, ninja.y);
+        
+        // Si la distance au ninja est inférieure ou égale à 100, arrêter l'attaque
+        if (distance_to_ninja <= 100) {
+            state = "idle";  // Réinitialiser l'état à "idle" si le ninja est trop proche
+            isAttacking = false;  // Arrêter l'attaque
+            shoot_timer = 0;  // Réinitialiser le timer de tir
+        }
+        else if (distance_to_ninja <= attack_distance && shoot_timer <= 0) {
+            // Passer à l'état d'attaque
+            state = "attack";
+            isAttacking = true;
 
-	       shoot_arrow(x, y, point_direction(x, y, ninja.x, ninja.y), 10);// tire une fleche
+            shoot_arrow(x, y, point_direction(x, y, ninja.x, ninja.y), 10); // Tirer une flèche
 
-	        // Réinitialiser le timer de tir
-	        shoot_timer = shoot_interval;
-	    }
-	}
-
-	// Décrémenter le timer de tir
-	if (shoot_timer > 0) {
-	    shoot_timer -= 1;
-	}
+            // Réinitialiser le timer de tir
+            shoot_timer = shoot_interval;
+        }
+    }
 }
 
 // Gestion des états

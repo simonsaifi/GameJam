@@ -1,25 +1,34 @@
 // Vérifie si le ninja est en range
-if (state == "idle" && state != "die"){
-	var ninja = instance_nearest(x, y, obj_ninja); // Trouver le ninja le plus proche
-	if (ninja != noone) {
-	    var distance_to_ninja = point_distance(x, y, ninja.x, ninja.y);
-	    if (distance_to_ninja <= attack_distance && shoot_timer <= 0) {
-	        // Passer à l'état d'attaque
-	        state = "attack";
-	        isAttacking = true;
+if (state == "idle" && state != "die") {
+    var ninja = instance_nearest(x, y, obj_ninja); // Trouver le ninja le plus proche
+    if (ninja != noone) {
+        var distance_to_ninja = point_distance(x, y, ninja.x, ninja.y);
+        
+        // Si la distance au ninja est inférieure à 100, arrêter l'attaque
+        if (distance_to_ninja <= 100) {
+            state = "idle";  // Réinitialiser l'état à "idle" si le ninja est trop proche
+            isAttacking = false;  // Arrêter l'attaque
+            shoot_timer = 0;  // Réinitialiser le timer de tir
+        }
+        else if (distance_to_ninja <= attack_distance && shoot_timer <= 0) {
+            // Passer à l'état d'attaque
+            state = "attack";
+            isAttacking = true;
 
-	       shoot_fireball(x, y, 180, 5);
+            // Tirer une boule de feu
+            shoot_fireball(x, y, point_direction(x, y, ninja.x, ninja.y), 8);
 
-	        // Réinitialiser le timer de tir
-	        shoot_timer = shoot_interval;
-	    }
-	}
+            // Réinitialiser le timer de tir
+            shoot_timer = shoot_interval;
+        }
+    }
 
-	// Décrémenter le timer de tir
-	if (shoot_timer > 0) {
-	    shoot_timer -= 1;
-	}
+    // Décrémenter le timer de tir
+    if (shoot_timer > 0) {
+        shoot_timer -= 1;
+    }
 }
+
 
 // Gestion des états
 switch (state) {
@@ -88,7 +97,7 @@ if (animation_done && state != "idle" && state != "die") { // Si l'animation est
     state = "idle"; // Définir l'état en idle
 }
 
- x -= 4; // Déplacement
+x -= 4; // Déplacement
 
 
 // Vérifier si l'objet sort du cadre à gauche
