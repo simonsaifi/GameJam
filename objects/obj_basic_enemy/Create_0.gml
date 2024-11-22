@@ -10,3 +10,7 @@ sprite_die = spr_basic_enemy_die; // Sprite pour la mort
 
 //Permet de vérifier si l'annimation de la sprite est terminée
 animation_done = false; //Initialiser l'annimation sur pas terminée
+
+//Permet de ne pas boucler l'animation
+isAttacking = false; // l'ennemi n'est pas en train d'attaquer
+isDying = false;

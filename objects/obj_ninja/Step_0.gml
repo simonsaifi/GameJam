@@ -214,21 +214,29 @@ if (keyboard_check_pressed(ord("Z")) && throw_cooldown == 0) {
 	}
 }
 
+// Dans l'événement Step du joueur
 if (keyboard_check_pressed(ord("E")) && !is_attacking && !is_sliding) {
     is_attacking = true; // Start attack state
     attack_timer = attack_duration; // Set timer to the length of the animation
-
+    
+    // Faire apparaître l'épée (avec collision)
+    var sword_x = x + 50; // Adjust to spawn in front of the player
+    var sword_y = y - 20; // Align with the player’s vertical position
+    var sword = instance_create_layer(sword_x, sword_y, "Instances", obj_attackEffect);
+    
     var attack_sound = choose(Sound_Attack1, Sound_Attack2);
     audio_play_sound(attack_sound, 1, false);
 }
 
-// Manage attack animation end
-if (is_attacking && attack_timer > 0) {
-    attack_timer -= 1; // Decrease attack timer
+// Gérer le timer d'attaque
+if (is_attacking) {
+    attack_timer -= 1;
     if (attack_timer <= 0) {
-        is_attacking = false; // End attack state
+        is_attacking = false; // Dire que l'animation est terminée
+        instance_destroy(obj_attackEffect); // Détruire l'instance de l'épée
     }
 }
+
 
 // Increment score based on movement
 if (phy_speed_x != 0 || is_transformed) {
