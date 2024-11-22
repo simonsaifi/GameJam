@@ -94,3 +94,8 @@ if (animation_done && state != "idle" && state != "die") { // Si l'animation est
 }
 
  x -= 4; // Déplacement
+
+// Vérifier si l'objet sort du cadre à gauche
+if (x < -150) {
+    instance_destroy();  // Supprimer l'objet
+}

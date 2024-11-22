@@ -31,3 +31,5 @@ if (place_meeting(x, y, obj_ninja)) { //Tuer le ninja si contact
 	//hit annimation ninja
 	room_goto(RoomMenu);
 }
+
+

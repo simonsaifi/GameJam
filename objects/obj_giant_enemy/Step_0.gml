@@ -106,3 +106,10 @@ if (pv < 1 && state != "die") {
     isDying = true; // Indiquer que l'ennemi est en train de mourir
 }
 
+
+
+// Vérifier si l'objet sort du cadre à gauche
+if (x < -150) {
+    instance_destroy();  // Supprimer l'objet
+}
+

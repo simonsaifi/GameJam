@@ -16,3 +16,4 @@ if (arrow != noone) {
     instance_destroy(arrow); // Détruire l'instance de la flèche
     instance_destroy(); // Détruire l'instance du shuriken
 }
+

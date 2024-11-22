@@ -26,3 +26,8 @@ if (place_meeting(x, y, obj_ninja)) { //Tuer le ninja si contact
 	//hit annimation ninja
 	room_goto(RoomMenu);
 }
+
+// Vérifier si l'objet sort du cadre à gauche
+if (x < 0) {
+    instance_destroy();  // Supprimer l'objet
+}

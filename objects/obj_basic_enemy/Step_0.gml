@@ -59,3 +59,9 @@ if (animation_done && state != "idle" && state != "die") { // Si animation pas t
     image_index = 0; // Réinitialiser l'index de l'image
     state = "idle"; // État passe à idle
 }
+
+
+// Vérifier si l'objet sort du cadre à gauche
+if (x < -150) {
+    instance_destroy();  // Supprimer l'objet
+}
