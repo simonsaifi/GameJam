@@ -26,6 +26,12 @@ switch (state) {
         sprite_index = sprite_hit;
         if (floor(image_index) == image_number - 1) {
             animation_done = true;
+            if (isDying) {
+                state = "die"; // Passer à l'état "die" après l'animation "hit"
+                image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation "die"
+            } else if (pv == 1) {
+                state = "idle1pv"; // Retourner à l'état "idle1pv" si l'ennemi n'est pas en train de mourir
+            }
         }
         break;
     case "die": // Cas mort
@@ -49,7 +55,7 @@ if (pv == 2) {
         if (shuriken != noone) {
             instance_destroy(shuriken); // Détruire l'instance du shuriken
         }
-    } else if (place_meeting(x, y, obj_ninja)) { // Tue le ninja en l'attaquant si il est en contact avec le Géant
+    } else if (place_meeting(x, y, obj_ninja) && state != "attack2pv") { // Tue le ninja en l'attaquant si il est en contact avec le Géant
         state = "attack2pv";
         animation_done = false;
         image_index = 0;
@@ -73,7 +79,7 @@ if (pv == 1) {
         if (shuriken != noone) {
             instance_destroy(shuriken); // Détruire l'instance du shuriken
         }
-    } else if (place_meeting(x, y, obj_ninja)) { // Tue le ninja en l'attaquant si il est en contact avec le Géant
+    } else if (place_meeting(x, y, obj_ninja) && state != "attack1pv") { // Tue le ninja en l'attaquant si il est en contact avec le Géant
         state = "attack1pv";
         animation_done = false;
         image_index = 0;
@@ -82,6 +88,9 @@ if (pv == 1) {
         pv -= 1;
         animation_done = false;
         image_index = 0;
+        if (pv < 1) {
+            isDying = true; // Indiquer que l'ennemi est en train de mourir
+        }
     }
 
     // Retour à l'état idle après l'animation
@@ -93,17 +102,7 @@ if (pv == 1) {
 }
 
 if (pv < 1 && state != "die") {
-
-    state = "die";
+    state = "hit"; // Passer à l'état "hit" avant de mourir
+    isDying = true; // Indiquer que l'ennemi est en train de mourir
 }
 
-// Test Réduction de pv
-if (keyboard_check_pressed(ord("W"))) {
-    pv -= 1;
-    state = "idle1pv";
-}
-
-// Reset 2pv
-if (keyboard_check_pressed(ord("X"))) {
-    pv = 2;
-}

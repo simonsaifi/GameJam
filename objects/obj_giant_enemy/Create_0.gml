@@ -12,3 +12,7 @@ sprite_die = spr_giant_enemy_die; // Sprite pour la mort
 
 //Permet de vérifier si l'annimation de la sprite est terminée
 animation_done = false;
+
+
+isAttacking = false;
+isDying = false;
