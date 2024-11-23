@@ -29,7 +29,8 @@ if (sword != noone) {
 
 if (place_meeting(x, y, obj_ninja)) { //Tuer le ninja si contact
 	//hit annimation ninja
-	room_goto(RoomMenu);
+	scr_ninja_get_hit();
+	instance_destroy(id); // Détruire l'instance de la flèche
 }
 
 

@@ -24,7 +24,8 @@ if (wizard != noone) {
 
 if (place_meeting(x, y, obj_ninja)) { //Tuer le ninja si contact
 	//hit annimation ninja
-	room_goto(RoomMenu);
+	scr_ninja_get_hit();
+	instance_destroy(id);  // Supprimer l'objet
 }
 
 // Vérifier si l'objet sort du cadre à gauche

@@ -2,23 +2,23 @@
 switch (state) {
     case "idle1pv": // Cas idle à 1pv
         sprite_index = sprite_idle1pv;
-        x += -4; // déplacement vers la gauche
+        enemy_movespeed(); // Déplacement
         break;
     case "idle2pv": // Cas idle à 2pv
         sprite_index = sprite_idle2pv;
-        x += -4; // déplacement vers la gauche
+        enemy_movespeed(); // Déplacement
         break;
     case "attack1pv": // Cas attaque à 1pv
         sprite_index = sprite_attack1pv;
         if (floor(image_index) == image_number - 1) {
-            room_goto(RoomMenu);
+            scr_ninja_get_hit();
             animation_done = true;
         }
         break;
     case "attack2pv": // Cas attaque à 2pv
         sprite_index = sprite_attack2pv;
         if (floor(image_index) == image_number - 1) {
-            room_goto(RoomMenu);
+            scr_ninja_get_hit();
             animation_done = true;
         }
         break;

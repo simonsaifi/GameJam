@@ -16,7 +16,7 @@ if (state == "idle" && state != "die") {
             isAttacking = true;
 
             // Tirer une boule de feu
-            shoot_fireball(x, y, point_direction(x, y, ninja.x, ninja.y), 8);
+            shoot_fireball(x, y, point_direction(x, y, ninja.x, ninja.y), 4 + (round(global.movespeed)*0.0005));
 
             // Réinitialiser le timer de tir
             shoot_timer = shoot_interval;
@@ -33,7 +33,7 @@ if (state == "idle" && state != "die") {
 // Gestion des états
 switch (state) {
     case "idle": // Cas Idle
-		x -= 4; // Déplacement
+		enemy_movespeed(); // Déplacement
         sprite_index = sprite_idle; // Définir le sprite de l'ennemi en idle
         break;
 
@@ -88,7 +88,7 @@ if (place_meeting(x, y, obj_shuriken)&& state != "die") { // Si le sorcier se pr
     image_index = 0; // Réinitialiser l'index de l'image
     state = "attackcac"; // L'état passe à attaque
     isAttacking = true;
-	room_goto(RoomMenu); // Retourner au menu
+	scr_ninja_get_hit();
 }
 
 // Retour à l'état idle après l'animation

@@ -239,9 +239,28 @@ if (is_attacking) {
 
 
 // Increment score based on movement
-if (phy_speed_x != 0 || is_transformed) {
-    score += abs(phy_speed_x); // Add the magnitude of movement to the score
-	score += 0.7; // Increment the score by a fixed amount
+if (round(global.score) < 30000) {
+	global.score += abs(phy_speed_x); // Add the magnitude of movement to the score
+	global.score += 1; // Increment the score by a fixed amount
+	global.score *= 1.0005; // Increment the score by scaling
+} else if (round(global.score) >= 30000) {
+	global.score += abs(phy_speed_x); // Add the magnitude of movement to the score
+	global.score += 1; // Increment the score by a fixed amount
+	global.score *= 1.00005; // Increment the score by scaling
+}  else if (round(global.score) >= 100000) {
+	global.score += abs(phy_speed_x); // Add the magnitude of movement to the score
+	global.score += 1; // Increment the score by a fixed amount
+	global.score *= 1.00005; // Increment the score by scaling
+}
+
+// Max speed of enemy
+if (round(global.movespeed) < 20000) {
+	global.movespeed += abs(phy_speed_x); // Add the magnitude of movement to the score
+	global.movespeed += 1; // Increment the score by a fixed amount
+	global.movespeed *= 1.0005; // Increment the score by scaling
+} else if (round(global.movespeed) >= 20000) {
+	global.movespeed += 0.1; // Increment the score by a fixed amount
+	global.movespeed *= 1.000005; // Increment the score by scaling
 }
 
 // Decrease the jump timer
@@ -319,3 +338,6 @@ if (keyboard_check_pressed(vk_space) && jump_timer <= 0) {
 
 // Lock Ninja Rotation
 phy_rotation = 0 // Prevent unwanted rotation
+
+show_debug_message("pv du ninja = " + string(global.ninja_pv));
+show_debug_message("movespeed = " + string(round(global.movespeed/10)));

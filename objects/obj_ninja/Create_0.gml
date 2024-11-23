@@ -1,3 +1,7 @@
+//Pv
+global.ninja_pv = 2 // Il a 3 points de vie
+
+
 // Initialize the starting position to lock the player horizontally
 start_x = x;
 
@@ -31,7 +35,9 @@ is_attacking = false; // To Track if the player is attacking
 attack_timer = 0; // Tracks attack duration
 attack_duration = 11; // Duration of attack in steps (e.g., 30 = 0.5 seconds at 60 FPS)
 
-score = 0; // Initialize the score
+
+global.score = 0; // Initialize the global score
+global.movespeed = 0; // Initialize the global enemy ms
 
 is_jump_attacking = false; // Track if the player is attacking mid-air
 
@@ -40,5 +46,4 @@ is_transformed = false; // Starts as the normal character
 current_sprite = -1; // Track the last sprite used
 
 has_double_jumped = false; // Tracks if the double jump has been used
-
 

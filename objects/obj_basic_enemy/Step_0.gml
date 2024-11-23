@@ -1,7 +1,7 @@
 // Gestion des états
 switch (state) { //Initialisation état state
     case "idle": //Cas Idle
-        x -= 4; // déplacement
+        enemy_movespeed(); // déplacement
         sprite_index = sprite_idle; // met la sprite idle sur l'ennemi
         break;
     case "attack":
@@ -9,7 +9,7 @@ switch (state) { //Initialisation état state
         if (floor(image_index) == image_number - 1) {
             animation_done = true;
             isAttacking = false; // Réinitialiser l'état d'attaque 
-            room_goto(RoomMenu); // Retourner au menu
+            scr_ninja_get_hit()
         }
         break;
     case "hit":

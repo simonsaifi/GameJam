@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_enemy_movespeed",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_enemy_movespeed",
+  "parent":{
+    "name":"enemy",
+    "path":"folders/Scripts/enemy.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
