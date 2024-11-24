@@ -18,6 +18,7 @@
     {"name":"Set","order":3,"path":"folders/Sprites/Set.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_archery_enemy","order":1,"path":"objects/obj_archery_enemy/obj_archery_enemy.yy",},
     {"name":"Obj_bg_1","order":1,"path":"objects/Obj_bg_1/Obj_bg_1.yy",},
     {"name":"Obj_bg_2","order":2,"path":"objects/Obj_bg_2/Obj_bg_2.yy",},
     {"name":"Obj_bg_3","order":3,"path":"objects/Obj_bg_3/Obj_bg_3.yy",},
