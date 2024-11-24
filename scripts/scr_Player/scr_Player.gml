@@ -7,6 +7,6 @@ function scr_ninja_get_hit(){
 		//animation de hit
 		//animation de mort
 		//Room Game over
-		room_goto(RoomMenu);
+		
 	}
 }
