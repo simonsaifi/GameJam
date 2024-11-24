@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_archery_enemy_idle",
+    "path":"sprites/spr_archery_enemy_idle/spr_archery_enemy_idle.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
