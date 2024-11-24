@@ -1,5 +1,5 @@
 //Pv
-global.ninja_pv = 2 // Il a 3 points de vie
+global.ninja_pv = 3 // Il a 3 points de vie
 
 
 // Initialize the starting position to lock the player horizontally

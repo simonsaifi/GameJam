@@ -356,3 +356,7 @@ phy_rotation = 0 // Prevent unwanted rotation
 
 show_debug_message("pv du ninja = " + string(global.ninja_pv));
 show_debug_message("movespeed = " + string(round(global.movespeed/10)));
+
+
+
+
