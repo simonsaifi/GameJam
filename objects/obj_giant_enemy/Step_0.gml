@@ -39,6 +39,7 @@ switch (state) {
         if (floor(image_index) == image_number - 1) {
             instance_destroy(id); // Détruire l'instance spécifique après l'animation de mort
             animation_done = true;
+			global.oni_bar += 25;
         }
         break;
 }
@@ -59,7 +60,14 @@ if (pv == 2) {
         state = "attack2pv";
         animation_done = false;
         image_index = 0;
-    }
+    } else if (place_meeting(x, y, obj_attackEffect) && state != "hit" && state != "die" && global.is_transformed) { // Si l'ennemi se prend un coup d'épée
+	    animation_done = false; // Animation définie sur pas terminée
+	    image_index = 0; // Réinitialiser l'index de l'image
+	    state = "hit"; // L'état passe à hit
+	    isDying = true; // Indiquer que l'ennemi est en train de mourir
+	}
+	
+	
     // Retour à l'état idle après l'animation
     if (animation_done && state != "idle2pv" && pv == 2) {
         state = "idle2pv";

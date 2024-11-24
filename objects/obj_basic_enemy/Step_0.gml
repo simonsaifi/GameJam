@@ -27,6 +27,7 @@ switch (state) { //Initialisation état state
         if (floor(image_index) == image_number - 1) {
             animation_done = true;
             instance_destroy(id); // Détruire l'instance après l'animation de mort
+			global.oni_bar += 5;
         }
         break;
 }
@@ -51,14 +52,23 @@ if (place_meeting(x, y, obj_shuriken) && state != "die") { // Si l'ennemi se pre
     image_index = 0; // Réinitialiser l'index de l'image
     state = "hit"; // L'état passe à hit
     isDying = true; // Indiquer que l'ennemi est en train de mourir
+} else if (place_meeting(x, y, obj_shuriken) && state != "die" && global.is_transformed) { // Si l'ennemi se prend un shuriken il meurt en oni mode
+    animation_done = false; // L'animation est comptée comme non terminée
+    image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation hit
+    state = "hit"; // L'état se met en hit/touché
+	isDying = true; // Indiquer que l'ennemi est en train de mourir
+    // Détecter et détruire le dernier shuriken en collision
+    var shuriken = instance_place(x, y, obj_shuriken); // Trouve l'instance du shuriken à la position de l'archer
+    if (shuriken != noone) {
+        instance_destroy(shuriken); // Détruire l'instance du shuriken
+    }
 }
-
 // Retour à l'état idle après l'animation
 if (animation_done && state != "idle" && state != "die") { // Si animation pas terminée et état différent de idle
     animation_done = false; // Animation définie sur pas terminée
     image_index = 0; // Réinitialiser l'index de l'image
     state = "idle"; // État passe à idle
-}
+} 
 
 
 // Vérifier si l'objet sort du cadre à gauche

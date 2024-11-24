@@ -69,6 +69,7 @@ switch (state) {
         if (floor(image_index) == image_number - 1) { // Si la frame de la sprite correspond à la dernière frame
             animation_done = true; // Dire que l'animation est terminée
             instance_destroy(id); // Détruire l'instance après l'animation de mort
+			global.oni_bar += 20;
         }
         break;
 }
@@ -89,6 +90,11 @@ if (place_meeting(x, y, obj_shuriken)&& state != "die") { // Si le sorcier se pr
     state = "attackcac"; // L'état passe à attaque
     isAttacking = true;
 	scr_ninja_get_hit();
+}  else if (place_meeting(x, y, obj_attackEffect) && state != "hit" && state != "die" && global.is_transformed) { // Si l'ennemi se prend un coup d'épée
+    animation_done = false; // Animation définie sur pas terminée
+    image_index = 0; // Réinitialiser l'index de l'image
+    state = "hit"; // L'état passe à hit
+    isDying = true; // Indiquer que l'ennemi est en train de mourir
 }
 
 // Retour à l'état idle après l'animation

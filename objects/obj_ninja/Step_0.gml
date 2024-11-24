@@ -9,33 +9,48 @@ if (jump_cooldown > 0) {
     jump_cooldown -= 1; // Reduce cooldown each frame
 }
 
-// Handle Oni Transformation
-if (keyboard_check_pressed(ord("T"))) { // Press 'T' to toggle transformation
-    is_transformed = !is_transformed; // Toggle transformation state
-    show_debug_message("Transformation toggled: " + string(is_transformed));
-	
-	// Spawn smoke effect under the character
-    var smoke_x = x + 60; // Horizontally aligned with the character
-    var smoke_y = bbox_bottom - 110; // Align with the bottom of the character
-    instance_create_layer(smoke_x, smoke_y, "UI", obj_Smoke); // Spawn smoke effect
-	audio_play_sound(Sound_Transformation, 1, false);
-	
-	// Music Logic
-    if (is_transformed) {
+// Oni Bar Filling Logic
+if (!global.is_transformed) {
+    global.oni_bar = clamp(global.oni_bar, 0, oni_bar_max); // Ensure it doesn't exceed the max value
+
+    // Automatically activate Oni mode when the bar is full
+    if (global.oni_bar >= oni_bar_max) {
+        global.is_transformed = true;          // Activate Oni mode
+        oni_mode_timer = oni_mode_duration; // Set the timer for Oni mode duration
+
+        // Play transformation effects
+        var smoke_x = x + 60; // Horizontally aligned with the character
+        var smoke_y = bbox_bottom - 110; // Align with the bottom of the character
+        instance_create_layer(smoke_x, smoke_y, "UI", obj_Smoke);
+        audio_play_sound(Sound_Transformation, 1, false);
+
         // Play Oni music
         audio_stop_all(); // Stop any currently playing music
         audio_play_sound(Sound_Oni, 1, true); // Play Oni music in a loop
-    } else {
-        // Return to normal music
-        audio_stop_all(); // Stop Oni music
-        audio_play_sound(Sound_Game, 1, true); // Play normal music in a loop
+
+        show_debug_message("Oni mode activated automatically!");
+    }
+}
+
+// Oni Mode Timer Countdown
+if (global.is_transformed) {
+    oni_mode_timer -= 1; // Decrease timer each frame
+    if (oni_mode_timer <= 0) {
+        global.is_transformed = false;  // Deactivate Oni mode
+        global.oni_bar = 0;             // Reset the Oni bar
+
+        // Play normal music
+        audio_stop_all();
+        audio_play_sound(Sound_Game, 1, true);
+
+        show_debug_message("Oni mode ended.");
     }
 }
 
 
 // Running Logic
 if (on_ground && !is_sliding && !is_jumping) {
-    var new_sprite = is_transformed ? spr_ninjaOniRun : spr_ninjaRun;
+    var new_sprite = global.is_transformed ? spr_ninjaOniRun : spr_ninjaRun;
 
     // Only update the sprite if it has changed
     if (sprite_index != new_sprite) {
@@ -56,7 +71,7 @@ if (!on_ground) {
     // If on the ground, reset jumping state
     if (is_jumping && phy_speed_y >= 0) {
         is_jumping = false;         // Reset jumping flag
-        sprite_index = is_transformed ? spr_ninjaOniRun : spr_ninjaRun; // Use appropriate running animation
+        sprite_index = global.is_transformed ? spr_ninjaOniRun : spr_ninjaRun; // Use appropriate running animation
         image_index = 0;             // Restart animation
         image_speed = 1.0;           // Set animation speed for running
     }
@@ -76,7 +91,7 @@ if (keyboard_check(ord("C")) && on_ground && !is_jumping) {
         is_sliding = true;
         show_debug_message("Sliding started");
 		
-        sprite_index = is_transformed ? spr_ninjaOniSlide : spr_ninjaSlide; // Use appropriate sliding sprite
+        sprite_index = global.is_transformed ? spr_ninjaOniSlide : spr_ninjaSlide; // Use appropriate sliding sprite
         image_index = 0;              // Restart animation
         image_speed = 1.0;            // Set animation speed for sliding
 		show_debug_message("Current Sprite: " + string(sprite_index) + ", Frame: " + string(image_index));
@@ -99,7 +114,7 @@ if (keyboard_check(ord("C")) && on_ground && !is_jumping) {
 
     // Reset to running animation
     if (!is_jumping && on_ground) {
-        sprite_index = is_transformed ? spr_ninjaOniRun : spr_ninjaRun; // Use appropriate running animation
+        sprite_index = global.is_transformed ? spr_ninjaOniRun : spr_ninjaRun; // Use appropriate running animation
         image_index = 0;
         image_speed = 1.0;
     }
@@ -107,14 +122,14 @@ if (keyboard_check(ord("C")) && on_ground && !is_jumping) {
 
 // Prevent running animation while sliding or jumping
 if (!is_sliding && !is_jumping && on_ground) {
-    var new_sprite = is_transformed ? spr_ninjaOniRun : spr_ninjaRun;
+    var new_sprite = global.is_transformed ? spr_ninjaOniRun : spr_ninjaRun;
     if (sprite_index != new_sprite) {
         sprite_index = new_sprite; // Switch to running animation
         image_index = 0;
         image_speed = 1.0;
     }
 } else if (is_sliding) {
-    sprite_index = is_transformed ? spr_ninjaOniSlide : spr_ninjaSlide;
+    sprite_index = global.is_transformed ? spr_ninjaOniSlide : spr_ninjaSlide;
     image_index = 0;
     image_speed = 1.0;
 }
@@ -146,7 +161,7 @@ if (keyboard_check(vk_space) && on_ground && !key_held && jump_cooldown == 0 && 
     }
 
     // Player starts jumping
-    sprite_index = is_transformed ? spr_ninjaOniJumpStart : spr_jumpStart; // Switch to appropriate jump animation
+    sprite_index = global.is_transformed ? spr_ninjaOniJumpStart : spr_jumpStart; // Switch to appropriate jump animation
     image_index = 0;              // Restart animation
     image_speed = 1.0;            // Set jump animation speed
     phy_speed_y = jump_speed;     // Apply upward velocity
@@ -165,7 +180,7 @@ y += phy_speed_y;
 if (is_jumping) {
     if (phy_speed_y < 0) {
         // Player is moving upward
-        var jump_idle_sprite = is_transformed ? spr_ninjaOniJumpIdle : spr_jumpIdle;
+        var jump_idle_sprite = global.is_transformed ? spr_ninjaOniJumpIdle : spr_jumpIdle;
         if (sprite_index != jump_idle_sprite) {
             sprite_index = jump_idle_sprite; // Use appropriate jump idle animation
             image_index = 0;            // Restart animation
@@ -174,14 +189,14 @@ if (is_jumping) {
 }
 
 // Run Dust Effect
-if (on_ground && sprite_index == (is_transformed ? spr_ninjaOniRun : spr_ninjaRun)) {
+if (on_ground && sprite_index == (global.is_transformed ? spr_ninjaOniRun : spr_ninjaRun)) {
     // Calculate dust effect position
     var dust_x = x - 40; // Slightly behind the player
     var dust_y = bbox_bottom - 20; // Close to the ground
 
     // Spawn the dust effect
     instance_create_layer(dust_x, dust_y, "FX", obj_runDust);
-} else if (sprite_index == (is_transformed ? spr_ninjaOniSlide : spr_ninjaSlide)) {
+} else if (sprite_index == (global.is_transformed ? spr_ninjaOniSlide : spr_ninjaSlide)) {
     // Destroy dust effects while sliding
     with (obj_runDust) {
         instance_destroy();
@@ -209,7 +224,7 @@ if (keyboard_check_pressed(ord("Z")) && throw_cooldown == 0) {
     audio_play_sound(Sound_Shuriken, 1, false);
     throw_cooldown = 45;
 	
-	if (is_transformed){
+	if (global.is_transformed){
 		throw_cooldown = 15;
 	}
 }
@@ -298,7 +313,7 @@ if (keyboard_check_pressed(vk_space) && jump_timer <= 0) {
         has_double_jumped = false; // Reset double jump
 
         // Play jump animation
-        sprite_index = is_transformed ? spr_ninjaOniJumpStart : spr_jumpStart;
+        sprite_index = global.is_transformed ? spr_ninjaOniJumpStart : spr_jumpStart;
         image_index = 0;
         image_speed = 1.0;
 
@@ -318,7 +333,7 @@ if (keyboard_check_pressed(vk_space) && jump_timer <= 0) {
         has_double_jumped = true; // Mark double jump
 
         // Play the same jump animation
-        sprite_index = is_transformed ? spr_ninjaOniJumpStart : spr_jumpStart;
+        sprite_index = global.is_transformed ? spr_ninjaOniJumpStart : spr_jumpStart;
         image_index = 0;
         image_speed = 1.0;
 

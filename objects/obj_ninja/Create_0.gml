@@ -41,9 +41,17 @@ global.movespeed = 0; // Initialize the global enemy ms
 
 is_jump_attacking = false; // Track if the player is attacking mid-air
 
-is_transformed = false; // Starts as the normal character
+global.is_transformed = false; // Starts as the normal character
 
 current_sprite = -1; // Track the last sprite used
 
 has_double_jumped = false; // Tracks if the double jump has been used
+
+
+
+global.oni_bar = 0;               // The current value of the Oni bar
+oni_bar_max = 100;         // The maximum value of the Oni bar
+oni_mode_duration = 1200;  // Duration of Oni mode in steps (20 seconds)
+oni_mode_timer = 0;        // Timer for Oni mode countdown
+
 
