@@ -3,8 +3,8 @@
   "%Name":"spr_ninjaAttack",
   "bboxMode":2,
   "bbox_bottom":165,
-  "bbox_left":10,
-  "bbox_right":164,
+  "bbox_left":12,
+  "bbox_right":166,
   "bbox_top":1,
   "collisionKind":4,
   "collisionTolerance":0,
@@ -24,6 +24,7 @@
   "height":170,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"e3dfd94c-57cd-482f-9703-1cb0b8747915","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"e3dfd94c-57cd-482f-9703-1cb0b8747915","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"10caa677-0d7c-4dae-ad94-1a551ab8b1a9","blendMode":0,"displayName":"default","isLocked":false,"name":"10caa677-0d7c-4dae-ad94-1a551ab8b1a9","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_ninjaAttack",

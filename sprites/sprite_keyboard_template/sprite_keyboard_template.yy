@@ -19,6 +19,8 @@
   "height":533,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"ec35f1f8-407e-41f6-9b05-a4b595998823","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"ec35f1f8-407e-41f6-9b05-a4b595998823","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"387a6cd4-061d-4f86-b0ce-f5c70e863c99","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"387a6cd4-061d-4f86-b0ce-f5c70e863c99","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"b91279e0-1459-4c89-bd14-576c7dbdf35b","blendMode":0,"displayName":"Guides Des Touches ","isLocked":false,"name":"b91279e0-1459-4c89-bd14-576c7dbdf35b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"4c258d0d-eb8b-4e04-b653-f24a4da41172","blendMode":0,"displayName":"Guide Des Touches Shadow","isLocked":false,"name":"4c258d0d-eb8b-4e04-b653-f24a4da41172","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"324a1cce-4ae8-40ad-864d-890c2886079a","blendMode":0,"displayName":"ESC MENU","isLocked":false,"name":"324a1cce-4ae8-40ad-864d-890c2886079a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
