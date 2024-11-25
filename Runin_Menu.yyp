@@ -101,7 +101,6 @@
     {"id":{"name":"obj_Sound_GameOver","path":"objects/obj_Sound_GameOver/obj_Sound_GameOver.yy",},},
     {"id":{"name":"obj_Sound_Menu","path":"objects/obj_Sound_Menu/obj_Sound_Menu.yy",},},
     {"id":{"name":"obj_title","path":"objects/obj_title/obj_title.yy",},},
-    {"id":{"name":"obj_top_score","path":"objects/obj_top_score/obj_top_score.yy",},},
     {"id":{"name":"obj_wizard_enemy","path":"objects/obj_wizard_enemy/obj_wizard_enemy.yy",},},
     {"id":{"name":"oCharacterMenu","path":"objects/oCharacterMenu/oCharacterMenu.yy",},},
     {"id":{"name":"RoomCredits","path":"rooms/RoomCredits/RoomCredits.yy",},},
