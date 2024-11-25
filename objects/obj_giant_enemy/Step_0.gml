@@ -46,7 +46,7 @@ switch (state) {
 
 // Transition d'état en fonction des touches pressées à 2PV
 if (pv == 2) {
-    if (place_meeting(x, y, obj_shuriken)) { // Si le géant se prend un shuriken il perd 1pv et joue l'anim hit
+    if (place_meeting(x, y, obj_shuriken) && !global.is_transformed) { // Si le géant se prend un shuriken il perd 1pv et joue l'anim hit
         state = "hit";
         animation_done = false; // L'animation est comptée comme non terminée
         image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation hit
@@ -63,10 +63,20 @@ if (pv == 2) {
     } else if (place_meeting(x, y, obj_attackEffect) && state != "hit" && state != "die" && global.is_transformed) { // Si l'ennemi se prend un coup d'épée
 	    animation_done = false; // Animation définie sur pas terminée
 	    image_index = 0; // Réinitialiser l'index de l'image
+		isDying = true; // Indiquer que l'ennemi est en train de mourir
+		pv -= 2;
 	    state = "hit"; // L'état passe à hit
-	    isDying = true; // Indiquer que l'ennemi est en train de mourir
+	} else if (place_meeting(x, y, obj_shuriken)&& state != "die" && state != "hit" && global.is_transformed) { // Si le sorcier se prend un shuriken
+    animation_done = false; // L'animation est comptée comme non terminée
+    image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation hit
+	pv -= 2;
+    state = "hit"; // L'état se met en hit/touché
+    // Détecter et détruire le dernier shuriken en collision
+    var shuriken = instance_place(x, y, obj_shuriken); // Trouve l'instance du shuriken à la position de l'archer
+    if (shuriken != noone) {
+        instance_destroy(shuriken); // Détruire l'instance du shuriken
+    }
 	}
-	
 	
     // Retour à l'état idle après l'animation
     if (animation_done && state != "idle2pv" && pv == 2) {

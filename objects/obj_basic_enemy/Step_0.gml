@@ -33,7 +33,7 @@ switch (state) { //Initialisation état state
 }
 
 // Transition d'état en fonction des touches pressées
-if (place_meeting(x, y, obj_shuriken) && state != "die") { // Si l'ennemi se prend un shuriken
+if (place_meeting(x, y, obj_shuriken) && state != "die" && !global.is_transformed) { // Si l'ennemi se prend un shuriken
     animation_done = false; // L'animation est comptée comme non terminée
     image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation hit
     state = "hit"; // L'état se met en hit/touché
@@ -55,6 +55,7 @@ if (place_meeting(x, y, obj_shuriken) && state != "die") { // Si l'ennemi se pre
 } else if (place_meeting(x, y, obj_shuriken) && state != "die" && global.is_transformed) { // Si l'ennemi se prend un shuriken il meurt en oni mode
     animation_done = false; // L'animation est comptée comme non terminée
     image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation hit
+	pv -= 1;
     state = "hit"; // L'état se met en hit/touché
 	isDying = true; // Indiquer que l'ennemi est en train de mourir
     // Détecter et détruire le dernier shuriken en collision

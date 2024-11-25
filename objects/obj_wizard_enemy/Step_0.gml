@@ -75,7 +75,7 @@ switch (state) {
 }
 
 // Transition d'état en fonction des interactions
-if (place_meeting(x, y, obj_shuriken)&& state != "die") { // Si le sorcier se prend un shuriken
+if (place_meeting(x, y, obj_shuriken)&& state != "die" && !global.is_transformed) { // Si le sorcier se prend un shuriken
     animation_done = false; // L'animation est comptée comme non terminée
     image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation hit
     state = "hit"; // L'état se met en hit/touché
@@ -93,9 +93,22 @@ if (place_meeting(x, y, obj_shuriken)&& state != "die") { // Si le sorcier se pr
 }  else if (place_meeting(x, y, obj_attackEffect) && state != "hit" && state != "die" && global.is_transformed) { // Si l'ennemi se prend un coup d'épée
     animation_done = false; // Animation définie sur pas terminée
     image_index = 0; // Réinitialiser l'index de l'image
+	pv -= 1;
     state = "hit"; // L'état passe à hit
     isDying = true; // Indiquer que l'ennemi est en train de mourir
+}  else if (place_meeting(x, y, obj_shuriken)&& state != "die" && global.is_transformed) { // Si le sorcier se prend un shuriken en mode oni
+    animation_done = false; // L'animation est comptée comme non terminée
+    image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation hit
+	pv -= 1;
+	isDying = true;
+    state = "hit"; // L'état se met en hit/touché
+    // Détecter et détruire le dernier shuriken en collision
+    var shuriken = instance_place(x, y, obj_shuriken); // Trouve l'instance du shuriken à la position de l'archer
+    if (shuriken != noone) {
+        instance_destroy(shuriken); // Détruire l'instance du shuriken
+    }
 }
+
 
 // Retour à l'état idle après l'animation
 if (animation_done && state != "idle" && state != "die") { // Si l'animation est terminée et que l'état n'est pas en idle

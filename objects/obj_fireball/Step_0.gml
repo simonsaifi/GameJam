@@ -32,3 +32,9 @@ if (place_meeting(x, y, obj_ninja)) { //Tuer le ninja si contact
 if (x < 0) {
     instance_destroy();  // Supprimer l'objet
 }
+
+var shuriken = instance_place(x, y, obj_shuriken); // Trouver un shuriken à la position de la boule de feu
+if (shuriken != noone && global.is_transformed) {
+    instance_destroy(id); // Détruire l'instance de la fireball
+    instance_destroy(shuriken); // Détruire l'instance du shuriken
+}
