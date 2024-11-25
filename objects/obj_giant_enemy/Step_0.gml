@@ -40,6 +40,8 @@ switch (state) {
             instance_destroy(id); // Détruire l'instance spécifique après l'animation de mort
             animation_done = true;
 			global.oni_bar += 25;
+			global.score += 500;
+			global.movespeed += 500;
         }
         break;
 }

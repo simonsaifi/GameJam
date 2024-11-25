@@ -28,6 +28,8 @@ switch (state) { //Initialisation état state
             animation_done = true;
             instance_destroy(id); // Détruire l'instance après l'animation de mort
 			global.oni_bar += 5;
+			global.score += 200;
+			global.movespeed += 200;
         }
         break;
 }

@@ -70,6 +70,8 @@ switch (state) {
             animation_done = true; // Dire que l'animation est terminée
             instance_destroy(id); // Détruire l'instance après l'animation de mort
 			global.oni_bar += 20;
+			global.score += 1000;
+			global.movespeed += 1000;
         }
         break;
 }
