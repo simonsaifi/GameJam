@@ -1,7 +1,7 @@
 {
   "FolderOrderSettings":[
-    {"name":"Obj_GameOver","order":6,"path":"folders/Objets/Obj_GameOver.yy",},
     {"name":"Obj_Backgrounds","order":5,"path":"folders/Objets/Obj_Backgrounds.yy",},
+    {"name":"Obj_GameOver","order":6,"path":"folders/Objets/Obj_GameOver.yy",},
     {"name":"Obj_HUD","order":3,"path":"folders/Objets/Obj_HUD.yy",},
     {"name":"Obj_Player","order":1,"path":"folders/Objets/Obj_Player.yy",},
     {"name":"Effects","order":3,"path":"folders/Objets/Obj_Player/Effects.yy",},

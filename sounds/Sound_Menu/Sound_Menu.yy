@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":79.9997,
+  "duration":74.25415,
   "name":"Sound_Menu",
   "parent":{
     "name":"Sons",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"Sound_Menu.mp3",
+  "soundFile":"Sound_Menu.wav",
   "type":0,
-  "volume":0.58,
+  "volume":1.0,
 }

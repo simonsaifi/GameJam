@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":111.9722,
+  "duration":72.79621,
   "name":"Sound_Game",
   "parent":{
     "name":"Sons",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"Sound_Game.mp3",
+  "soundFile":"Sound_Game.wav",
   "type":0,
-  "volume":0.5,
+  "volume":1.0,
 }
