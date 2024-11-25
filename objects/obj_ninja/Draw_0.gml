@@ -16,6 +16,9 @@ var filled_color2 = make_color_rgb(255, 140, 140); // Secondary filled color
 var empty_color = make_color_rgb(100, 50, 50);     // Empty pixel color
 var separator_color = c_black;   // Color for separators
 
+// Clamp Oni bar value to ensure it stays within valid range
+global.oni_bar = clamp(global.oni_bar, 0, oni_bar_max);
+
 // Calculate the number of "pixels" that should be filled
 var total_pixels = bar_width div pixel_size;               // Total number of blocks
 var filled_pixels = (global.oni_bar / oni_bar_max) * total_pixels; // Filled blocks based on Oni bar progress
