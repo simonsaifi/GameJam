@@ -52,7 +52,7 @@ if (place_meeting(x, y, obj_shuriken) && state != "die" && !global.is_transforme
     image_index = 0; // Réinitialiser l'index de l'image
     state = "hit"; // L'état passe à hit
     isDying = true; // Indiquer que l'ennemi est en train de mourir
-} else if (place_meeting(x, y, obj_shuriken) && state != "die" && global.is_transformed) { // Si l'ennemi se prend un shuriken il meurt en oni mode
+} else if (place_meeting(x, y, obj_shuriken) && state != "die" && state != "hit"  && global.is_transformed) { // Si l'ennemi se prend un shuriken il meurt en oni mode
     animation_done = false; // L'animation est comptée comme non terminée
     image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation hit
 	pv -= 1;

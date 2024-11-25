@@ -28,3 +28,11 @@ if (timer >= next_spawn_time) {
     // Choisir un nouvel intervalle aléatoire pour le prochain spawn (entre 4 et 10 secondes)
     next_spawn_time = random_range(spawn_interval_min, spawn_interval_max);
 }
+
+if (global.is_transformed) {
+	spawn_interval_min = 30;
+	spawn_interval_max = 60;
+} else {
+	spawn_interval_min = 60;
+	spawn_interval_max = 180;
+}
