@@ -15,10 +15,10 @@ if (place_meeting(x, y, obj_attackEffect) && direction!=0) { //Renovyer la boule
 }
 
 //tue le sorcier si il se prend la boule de feu
-var wizard = instance_place(x, y, obj_wizard_enemy); // Trouver un sorcier à la position de la flèche
+var wizard = instance_place(x, y, obj_wizard_enemy); // Trouver un sorcier à la position de la boule de feu
 if (wizard != noone) {
-	obj_wizard_enemy.isDying = true;
-    obj_wizard_enemy.state = "hit"
+	obj_wizard_enemy.id.isDying = true;
+    obj_wizard_enemy.id.state = "hit"
     instance_destroy(); // Détruire l'instance de la boule de feu
 }
 
