@@ -1,33 +1,26 @@
-/// @DnDAction : YoYo Games.Drawing.Draw_Self
-/// @DnDVersion : 1
-/// @DnDHash : 3E180862
-draw_self();
+if (point_in_rectangle(mouse_x, mouse_y, x - sprite_width / 2, y - sprite_height / 2, x + sprite_width / 2, y + sprite_height / 2)) {
+    // Mouse is hovering over the button
+    draw_self();
+    draw_set_font(FontMenu);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
 
-/// @DnDAction : YoYo Games.Drawing.Set_Font
-/// @DnDVersion : 1
-/// @DnDHash : 17607077
-/// @DnDArgument : "font" "FontMenu"
-/// @DnDSaveInfo : "font" "FontMenu"
-draw_set_font(FontMenu);
+    // Draw with scaling (zoom effect)
+    draw_sprite_ext(sprite_index, image_index, x, y, 1.1, 1.1, 0, c_white, 1);
 
-/// @DnDAction : YoYo Games.Drawing.Set_Alignment
-/// @DnDVersion : 1.1
-/// @DnDHash : 5021FD9F
-/// @DnDArgument : "halign" "fa_center"
-/// @DnDArgument : "valign" "fa_middle"
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
+    draw_text(x, y, string(button_text) + "");
 
-/// @DnDAction : YoYo Games.Drawing.Draw_Value
-/// @DnDVersion : 1
-/// @DnDHash : 7F031773
-/// @DnDArgument : "x_relative" "1"
-/// @DnDArgument : "y_relative" "1"
-/// @DnDArgument : "caption" "button_text"
-draw_text(x + 0, y + 0, string(button_text) + "");
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+} else {
+    // Normal drawing
+    draw_self();
+    draw_set_font(FontMenu);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
 
-/// @DnDAction : YoYo Games.Drawing.Set_Alignment
-/// @DnDVersion : 1.1
-/// @DnDHash : 6D6C4555
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
+    draw_text(x, y, string(button_text) + "");
+
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+}
