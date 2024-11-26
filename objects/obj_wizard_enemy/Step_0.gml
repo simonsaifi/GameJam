@@ -77,7 +77,7 @@ switch (state) {
 }
 
 // Transition d'état en fonction des interactions
-if (place_meeting(x, y, obj_shuriken)&& state != "die" && !global.is_transformed) { // Si le sorcier se prend un shuriken
+if (place_meeting(x, y, obj_shuriken)&& state != "die" && state != "hit" && !global.is_transformed) { // Si le sorcier se prend un shuriken
     animation_done = false; // L'animation est comptée comme non terminée
     image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation hit
     state = "hit"; // L'état se met en hit/touché
@@ -98,7 +98,7 @@ if (place_meeting(x, y, obj_shuriken)&& state != "die" && !global.is_transformed
 	pv -= 1;
     state = "hit"; // L'état passe à hit
     isDying = true; // Indiquer que l'ennemi est en train de mourir
-}  else if (place_meeting(x, y, obj_shuriken)&& state != "die" && global.is_transformed) { // Si le sorcier se prend un shuriken en mode oni
+}  else if (place_meeting(x, y, obj_shuriken)&&  state != "die" && state != "hit" && global.is_transformed) { // Si le sorcier se prend un shuriken en mode oni
     animation_done = false; // L'animation est comptée comme non terminée
     image_index = 0; // Réinitialiser l'index de l'image pour commencer l'animation hit
 	pv -= 1;
