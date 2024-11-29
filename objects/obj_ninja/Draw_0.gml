@@ -1,7 +1,8 @@
 // Draw the player sprite
 draw_self();
 
-draw_text(55,40, "Score  " + string(round(global.score/10))); // Display score at the top-left corner
+// Score affiché dans obj_pause
+
 
 // Pixel Bar Settings
 var bar_width = 300;   // Total width of the bar

@@ -43,6 +43,7 @@
     {"name":"obj_ninja","order":1,"path":"objects/obj_ninja/obj_ninja.yy",},
     {"name":"obj_ninjaOniRun","order":2,"path":"objects/obj_ninjaOniRun/obj_ninjaOniRun.yy",},
     {"name":"obj_oniMode","order":2,"path":"objects/obj_oniMode/obj_oniMode.yy",},
+    {"name":"obj_pause","order":3,"path":"objects/obj_pause/obj_pause.yy",},
     {"name":"obj_runDust","order":1,"path":"objects/obj_runDust/obj_runDust.yy",},
     {"name":"obj_shuriken","order":1,"path":"objects/obj_shuriken/obj_shuriken.yy",},
     {"name":"obj_slideDust","order":2,"path":"objects/obj_slideDust/obj_slideDust.yy",},
