@@ -10,6 +10,7 @@ if (global.score*0.1 > global.high_score) {
 //Augmentation du score pour check les backgrounds
 if (keyboard_check_pressed(ord("S"))){
 	global.score += 1000;
+	global.movespeed += 1000;
 }
 
 if (keyboard_check_pressed(ord("Q"))&& global.ninja_pv == -1){
