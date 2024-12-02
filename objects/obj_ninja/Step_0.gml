@@ -4,6 +4,34 @@ phy_position_x = start_x;
 // Ground Detection
 var on_ground = place_meeting(x, y + 2, obj_ground);
 
+
+
+// Increment score based on movement
+if (round(global.score) < 30000) {
+	global.score += abs(phy_speed_x); // Add the magnitude of movement to the score
+	global.score += 1; // Increment the score by a fixed amount
+	global.score *= 1.0005; // Increment the score by scaling
+} else if (round(global.score) >= 30000) {
+	global.score += abs(phy_speed_x); // Add the magnitude of movement to the score
+	global.score += 1; // Increment the score by a fixed amount
+	global.score *= 1.00005; // Increment the score by scaling
+}  else if (round(global.score) >= 100000) {
+	global.score += abs(phy_speed_x); // Add the magnitude of movement to the score
+	global.score += 1; // Increment the score by a fixed amount
+	global.score *= 1.00005; // Increment the score by scaling
+}
+// Max speed of enemy
+if (round(global.movespeed) < 20000) {
+	global.movespeed += abs(phy_speed_x); // Add the magnitude of movement to the score
+	global.movespeed += 1; // Increment the score by a fixed amount
+	global.movespeed *= 1.0005; // Increment the score by scaling
+} else if (round(global.movespeed) >= 20000) {
+	global.movespeed += 0.1; // Increment the score by a fixed amount
+	global.movespeed *= 1.000005; // Increment the score by scaling
+}
+
+
+
 // Oni Mode Logic
 if (!global.is_transformed) {
     global.oni_bar = clamp(global.oni_bar, 0, oni_bar_max);
