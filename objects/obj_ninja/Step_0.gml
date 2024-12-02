@@ -122,6 +122,7 @@ if (keyboard_check_pressed(vk_space) && jump_cooldown == 0) {
         sprite_index = global.is_transformed ? spr_ninjaOniJumpStart : spr_jumpStart;
         image_index = 0;
         image_speed = 1.0;
+		instance_create_layer(x + 65, bbox_bottom - 3, "FX", obj_jumpEffect);
         audio_play_sound(Sound_Jump, 1, false);
         show_debug_message("Normal Jump");
     } else if (!on_ground && is_jumping && !has_double_jumped) {
