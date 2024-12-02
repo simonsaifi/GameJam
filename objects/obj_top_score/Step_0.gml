@@ -7,6 +7,13 @@ if (global.score*0.1 > global.high_score) {
 	file_text_close(file);
 }
 
+//Augmentation du score pour check les backgrounds
+if (keyboard_check_pressed(ord("S"))){
+	global.score += 1000;
+}
 
+if (keyboard_check_pressed(ord("Q"))){
+	global.ninja_pv = -1;
+}
 
 
