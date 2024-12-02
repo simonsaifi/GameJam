@@ -13,6 +13,7 @@ if (keyboard_check_pressed(ord("S"))){
 	global.movespeed += 1000;
 }
 
+//Devenir invincible
 if (keyboard_check_pressed(ord("Q"))&& global.ninja_pv == -1){
 	global.ninja_pv = 3;
 } else if (keyboard_check_pressed(ord("Q"))){
