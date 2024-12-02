@@ -293,7 +293,6 @@ if (on_ground) {
     has_double_jumped = false;
 
     // Reset physics to avoid stuck or spinning issues
-    phy_rotation = 0;     // Prevent rotation
     phy_speed_y = 0;      // Stop vertical movement
     image_angle = 0;      // Reset image orientation
 
