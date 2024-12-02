@@ -1,9 +1,9 @@
 {
   "$GMSprite":"",
   "%Name":"spr_ninjahit",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":151,
-  "bbox_left":36,
+  "bbox_left":96,
   "bbox_right":119,
   "bbox_top":28,
   "collisionKind":4,

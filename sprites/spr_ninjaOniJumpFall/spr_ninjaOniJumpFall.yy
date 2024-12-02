@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_ninjaOniJumpFall",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":151,
-  "bbox_left":16,
-  "bbox_right":127,
+  "bbox_left":80,
+  "bbox_right":109,
   "bbox_top":20,
   "collisionKind":1,
   "collisionTolerance":0,

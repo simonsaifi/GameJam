@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_jumpStart",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":151,
-  "bbox_left":36,
-  "bbox_right":123,
+  "bbox_left":93,
+  "bbox_right":121,
   "bbox_top":28,
   "collisionKind":4,
   "collisionTolerance":0,
