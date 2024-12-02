@@ -12,7 +12,9 @@ if (keyboard_check_pressed(ord("S"))){
 	global.score += 1000;
 }
 
-if (keyboard_check_pressed(ord("Q"))){
+if (keyboard_check_pressed(ord("Q"))&& global.ninja_pv == -1){
+	global.ninja_pv = 3;
+} else if (keyboard_check_pressed(ord("Q"))){
 	global.ninja_pv = -1;
 }
 
