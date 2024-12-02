@@ -58,7 +58,6 @@ if (on_ground && !is_sliding && !is_jumping) {
         image_index = 0;                   // Restart animation
         image_speed = 1.0;                 // Set animation speed
         show_debug_message("Switched to sprite: " + string(new_sprite));
-		
     }
 }
 
@@ -316,13 +315,6 @@ if (keyboard_check_pressed(vk_space) && jump_timer <= 0) {
         sprite_index = global.is_transformed ? spr_ninjaOniJumpStart : spr_jumpStart;
         image_index = 0;
         image_speed = 1.0;
-
-        // Spawn jump effect
-        var effect_x = x + 65;
-        var effect_y = bbox_bottom - 3;
-        instance_create_layer(effect_x, effect_y, "FX", obj_jumpEffect);
-
-        audio_play_sound(Sound_Jump, 1, false);
 
         // Set jump cooldown
         jump_timer = jump_delay;
